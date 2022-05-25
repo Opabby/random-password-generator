@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Password Genertor</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <div id="interface">
+            <h2>Generate a <span>random password</span></h2>
+            <h3>Never use an insecure password again.</h3>
+            <button onClick="fetchPasswords()">
+                <span id="button-icon"></span>Generate passwords
+            </button>
+            <hr>
+            <div id="password-display-section">
+                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="first-password" value="">
+                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="second-password" value="">
+                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="third-password" value="">
+                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="fourth-password" value="">
+            </div>
+        </div>
+        <script src="./main.js"></script>
+    </body>
+</html>
