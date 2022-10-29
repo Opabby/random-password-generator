@@ -8,15 +8,31 @@
         <div id="interface">
             <h2>Generate a <span>random password</span></h2>
             <h3>Never use an insecure password again.</h3>
-            <button onClick="fetchPasswords()">
-                <span id="button-icon"></span>Generate passwords
-            </button>
+            <div class="buttons">
+                <button id="generate-password">
+                    <span id="button-icon"></span>Generate passwords
+                </button>
+             <!--  <div class="buttons-radio">
+                    <div>
+                        <input type="radio" id="radio" name="size" value="10">
+                        <label for="10">10 characters</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio" name="size" value="15" checked="checked">
+                        <label for="15">15 characters</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio" name="size" value="20">
+                        <label for="20">20 characters</label>
+                    </div>
+                </div>--> 
+            </div>
             <hr>
             <div id="password-display-section">
-                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="first-password" value="">
-                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="second-password" value="">
-                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="third-password" value="">
-                <input onclick="copyToClipboard()" type="text" class="password-box has-dots" id="fourth-password" value="">
+                <p class="password-box has-dots" id="first-password"></p>
+                <p class="password-box has-dots" id="second-password"></p>
+                <p class="password-box has-dots" id="third-password"></p>
+                <p class="password-box has-dots" id="fourth-password"></p>
             </div>
         </div>
         <script src="./main.js"></script>

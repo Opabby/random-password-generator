@@ -1,37 +1,23 @@
-let passwordElements = document.querySelectorAll(".password-box");
-let asciiList = [];
+const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
+"/"];
 
-function fetchPasswords() {
-    buildAsciiList();
+let passwordBoxes = document.querySelectorAll(".password-box");
+const generatePasswords = document.querySelector("#generate-password");
+let randomIndex = Math.floor(Math.random()*characters.length);
+let passwordLength = 15;
 
-    for(let i = 0; i < passwordElements.length; i++) {
-        passwordElements[i].classList.remove("has-dots");
-        passwordElements[i].classList.add("has-password");
-        passwordElements[i].value = generatePassword(10);
-    }
-    asciiList = [];
-}
 
-function generatePassword(size) {
-    let numberList = getRandomNumberList(size);
-    let password = "";
-
-    for (let i = 0; i < size; i++) {
-        password += asciiList[numberList[i]];
+function createPassword(){
+    let password= '';
+    for (let i = 0; i < passwordLength; i++){
+        password += characters[Math.floor(Math.random()*characters.length)];
     }
     return password;
 }
 
-function buildAsciiList() {
-    for (let i = 33; i < 127; i++) {
-        asciiList.push(String.fromCharCode(i));
+generatePasswords.onclick = () => {
+    for (let i = 0; i < passwordBoxes.length; i++) {
+        passwordBoxes[i].classList.remove('has-dots');
+        passwordBoxes[i].textContent = createPassword();
     }
-}
-
-function getRandomNumberList(size) {
-    let list = [];
-    for (let i = 0; i < size; i++) {
-        list.push(Math.floor(Math.random() * asciiList.length));
-    }
-    return list;
 }

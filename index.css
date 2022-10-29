@@ -40,9 +40,17 @@ h3 {
     margin-top: .5rem;
 }
 
-button {
+.buttons{
     margin-top: 3.2rem;
     margin-bottom: 2.2rem;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+button {
     color: white;
     background: #F43F5E;
     font-size: 16px;
@@ -64,6 +72,14 @@ button {
     margin-right: 1rem;
 }
 
+.buttons-radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: .5rem;
+    margin-left: 3rem;
+}
+
 /* #user-input{
     display: flex;
     justify-content: space-between;
@@ -82,11 +98,18 @@ hr{
 }
 
 .password-box{
-    width: 100%;
+    width: 13.5rem;
     height: 2.5rem;
     border-radius: 5px;
     border: none;
     background: #273549;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.password-box:hover{
+    cursor: pointer;
 }
 
 .has-dots{
